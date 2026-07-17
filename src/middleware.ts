@@ -26,18 +26,22 @@ export async function middleware(request: NextRequest) {
 
   // 2. Protect Admin API Routes
   if (path.startsWith("/api/admin") && path !== "/api/admin/login" && path !== "/api/admin/logout") {
-    const token = request.cookies.get("admin_session")?.value;
+    const isPublicGet = request.method === "GET" && (path === "/api/admin/activities" || path === "/api/admin/results");
+    
+    if (!isPublicGet) {
+      const token = request.cookies.get("admin_session")?.value;
 
-    if (!token) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
+      if (!token) {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      }
 
-    try {
-      const secret = new TextEncoder().encode(process.env.JWT_SECRET || "athecs_security_token_secret_key_2026");
-      await jwtVerify(token, secret);
-      return NextResponse.next();
-    } catch {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      try {
+        const secret = new TextEncoder().encode(process.env.JWT_SECRET || "athecs_security_token_secret_key_2026");
+        await jwtVerify(token, secret);
+        return NextResponse.next();
+      } catch {
+        return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      }
     }
   }
 
