@@ -146,7 +146,7 @@ export default function ContactUs() {
                     <p className="text-blue-200 text-xs font-bold uppercase tracking-wider mb-2">Office Hours</p>
                     <div className="flex items-center gap-2 text-white">
                       <Clock className="h-4 w-4 shrink-0 text-blue-200" />
-                      <span className="text-sm">Mon – Sat: 9:00 AM – 8:00 PM</span>
+                      <span className="text-sm">Mon – Sat: 10:00 AM – 9:00 PM</span>
                     </div>
                   </div>
                 </div>
