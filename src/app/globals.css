@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
@@ -5,16 +6,16 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Brand Palette */
-  --brand-primary: #1E40AF;
-  --brand-secondary: #2563EB;
-  --brand-accent: #DC2626;
+  /* Premium Light Brand Palette - Blue & Red Theme */
+  --brand-primary: #2563EB;
+  --brand-secondary: #DC2626;
+  --brand-accent: #F59E0B;
   --brand-bg: #F8FAFC;
   --brand-surface: #FFFFFF;
   --brand-text: #0F172A;
-  --brand-text-muted: #475569;
+  --brand-text-muted: #64748B;
 
-  /* Shadcn standard variables based on brand */
+  /* Shadcn standard variables */
   --background: var(--brand-bg);
   --foreground: var(--brand-text);
   --card: var(--brand-surface);
@@ -25,39 +26,16 @@
   --primary-foreground: #ffffff;
   --secondary: var(--brand-secondary);
   --secondary-foreground: #ffffff;
-  --muted: #f1f5f9;
+  --muted: #F1F5F9;
   --muted-foreground: var(--brand-text-muted);
   --accent: var(--brand-accent);
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
+  --border: #E2E8F0;
+  --input: #E2E8F0;
   --ring: var(--brand-primary);
-  --radius: 1rem; /* Rounded corners (16px) */
-}
-
-.dark {
-  /* Optional: Adjust for dark mode if requested, using same logic */
-  --background: #020817;
-  --foreground: #f8fafc;
-  --card: #0f172a;
-  --card-foreground: #f8fafc;
-  --popover: #0f172a;
-  --popover-foreground: #f8fafc;
-  --primary: #3b82f6;
-  --primary-foreground: #ffffff;
-  --secondary: #1d4ed8;
-  --secondary-foreground: #ffffff;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --accent: #ef4444;
-  --accent-foreground: #ffffff;
-  --destructive: #7f1d1d;
-  --destructive-foreground: #f8fafc;
-  --border: #1e293b;
-  --input: #1e293b;
-  --ring: #3b82f6;
+  --radius: 1rem;
 }
 
 @theme inline {
@@ -84,7 +62,7 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: 'Inter', var(--font-geist-sans), sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
@@ -92,7 +70,55 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', 'Geist', sans-serif;
+  }
+}
+
+/* Premium utility classes */
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, #2563EB, #DC2626);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-bg-primary {
+    background: linear-gradient(135deg, #2563EB 0%, #DC2626 100%);
+  }
+
+  .gradient-bg-soft {
+    background: linear-gradient(135deg, #EFF6FF 0%, #FEF2F2 100%);
+  }
+
+  .card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.15);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+  }
+
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-top: 7rem;
+      padding-bottom: 7rem;
+    }
   }
 }
