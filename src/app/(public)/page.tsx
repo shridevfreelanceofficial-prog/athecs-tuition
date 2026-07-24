@@ -74,9 +74,9 @@ const schoolFeatures = [
 ]
 
 const stats = [
-  { value: "8+", label: "Years of Excellence" },
-  { value: "500+", label: "Students Mentored" },
-  { value: "95%", label: "Board Pass Rate" },
+  { value: "10+", label: "Years of Excellence" },
+  { value: "2000+", label: "Students Mentored" },
+  { value: "100%", label: "Board Pass Rate" },
   { value: "2", label: "Branches in Navi Mumbai" },
 ]
 

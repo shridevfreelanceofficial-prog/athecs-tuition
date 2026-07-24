@@ -137,8 +137,8 @@ export default function ContactUs() {
 
                   <div>
                     <p className="text-blue-200 text-xs font-bold uppercase tracking-wider mb-2">Email</p>
-                    <a href="mailto:info@athecstuition.com" className="flex items-center gap-2 text-white hover:text-blue-200 transition-colors">
-                      <Mail className="h-4 w-4 shrink-0" /> info@athecstuition.com
+                    <a href="mailto:athecstuition@gmail.com" className="flex items-center gap-2 text-white hover:text-blue-200 transition-colors">
+                      <Mail className="h-4 w-4 shrink-0" /> athecstuition@gmail.com
                     </a>
                   </div>
 

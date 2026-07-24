@@ -174,7 +174,7 @@ export default function AboutUs() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative flex-shrink-0 flex items-center justify-center w-48 h-48 lg:w-72 lg:h-72"
+              className="relative flex-shrink-0 flex items-center justify-center w-64 h-64 lg:w-[24rem] lg:h-[24rem]"
             >
               {[1.15, 1.35, 1.55].map((scaleFactor, i) => (
                 <motion.div
@@ -197,12 +197,12 @@ export default function AboutUs() {
 
               <div className="absolute rounded-full bg-white/20 blur-3xl w-[70%] h-[70%]" />
 
-              <div className="relative w-40 h-40 lg:w-60 lg:h-60 rounded-full overflow-hidden border-4 border-white/50 shadow-2xl z-10">
+              <div className="relative w-52 h-52 lg:w-[22rem] lg:h-[22rem] rounded-full overflow-hidden border-4 border-white/50 shadow-2xl z-10">
                 <Image
-                  src="/images/Founder/founder.png"
+                  src="/images/Founder/DSC_4227.JPG"
                   alt="Abhishek Mishra – Founder"
                   fill
-                  className="object-cover object-top"
+                  className="object-cover object-[center_15%]"
                   priority
                 />
               </div>
