@@ -134,6 +134,14 @@ export default function Footer() {
             <p>&copy; {new Date().getFullYear()} ATHECS TUITION. All rights reserved.</p>
           </div>
           <p>Designed with excellence for educational success.</p>
+          <a
+            href="https://www.shridevfreelance.online/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald-400 hover:text-emerald-300 transition-colors font-medium"
+          >
+            Developed by ShriDev Freelance
+          </a>
         </div>
       </div>
     </footer>
